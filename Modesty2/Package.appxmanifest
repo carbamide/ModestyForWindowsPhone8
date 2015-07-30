@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+
+  <Identity Name="4c9bcda4-9287-435c-98e6-ceb1a4ba1695"
+            Publisher="CN=jbarr"
+            Version="1.0.0.0" />
+
+  <mp:PhoneIdentity PhoneProductId="150f769a-a7e9-4755-bde7-7a4ac0dd5909" PhonePublisherId="60c53409-00f3-4b10-ae2c-ab303f599c78"/>
+
+  <Properties>
+    <DisplayName>Modesty2</DisplayName>
+    <PublisherDisplayName>jbarr</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="x150f769aya7e9y4755ybde7y7a4ac0dd5909x"
+        Executable="AGHost.exe"
+        EntryPoint="MainPage.xaml">
+      <m3:VisualElements
+          DisplayName="Modesty2"
+          Square150x150Logo="Assets\SquareTile150x150.png"
+          Square44x44Logo="Assets\Logo.png"
+          Description="Modesty2"
+          ForegroundText="light"
+          BackgroundColor="#464646">
+        <m3:DefaultTile Square71x71Logo="Assets\SquareTile71x71.png"/>
+        <m3:SplashScreen Image="Assets\Splashscreen.png" />
+      </m3:VisualElements>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="AgHost.BackgroundTask">
+          <BackgroundTasks>
+          <Task Type="systemEvent" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+  </Capabilities>
+  <Extensions>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>AgHostSvcs.dll</Path>
+        <ActivatableClass ActivatableClassId="AgHost.BackgroundTask" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+  </Extensions>
+</Package>

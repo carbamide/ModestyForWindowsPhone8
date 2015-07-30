@@ -104,7 +104,7 @@ namespace Modesty2.Models
 
                     MapToStaff(responseText);
                 }
-                catch (WebException e)
+                catch (WebException ignored)
                 {
                     return;
                 }
@@ -143,7 +143,7 @@ namespace Modesty2.Models
 
                     MapToModestyInfo(responseText);
                 }
-                catch (WebException e)
+                catch (WebException ignored)
                 {
                     return;
                 }
